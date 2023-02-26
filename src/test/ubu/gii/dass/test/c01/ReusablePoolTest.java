@@ -71,8 +71,9 @@ public class ReusablePoolTest {
 	@Test
 	public void testReleaseReusable() {
 		ReusablePool reusablePool_release = ReusablePool.getInstance();
-		Reusable r = reusablePool_release.acquireReusable();
+		
 		try {
+			Reusable r = reusablePool_release.acquireReusable();
 			reusablePool_release.releaseReusable(r);
 			assertTrue("No debería saltar excepcion",true);
 		}catch(Exception e) {
