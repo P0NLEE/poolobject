@@ -54,7 +54,7 @@ public class ReusablePoolTest {
 	 */
 	@Test(expected = NotFreeInstanceException.class)
 	public void testAcquireReusable() {
-		reusablePool = null;
+		this.tearDown();
 		reusablePool.acquireReusable();
 		
 		
