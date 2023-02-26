@@ -1,9 +1,0 @@
-/**
- * 
- */
-/**
- * @author bilal
- *
- */
-module poolobject {
-}
