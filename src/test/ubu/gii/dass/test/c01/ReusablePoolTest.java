@@ -74,7 +74,7 @@ public class ReusablePoolTest {
 		Reusable r = reusablePool_release.acquireReusable();
 		try {
 			//Comprobamos que no se lanza excepcion
-			reusablePool.releaseReusable(r);
+			reusablePool_release.releaseReusable(r);
 			
 		}catch(DuplicatedInstanceException e) {
 			fail("No debería haber devuelto la excepcion");
