@@ -6,5 +6,4 @@
  *
  */
 module poolobject {
-	requires java.logging;
 }
