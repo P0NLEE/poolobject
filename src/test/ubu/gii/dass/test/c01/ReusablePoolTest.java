@@ -52,10 +52,15 @@ public class ReusablePoolTest {
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
 	 */
-	@Test(expected = NotFreeInstanceException.class)
-	public void testAcquireReusable() {
+	@Test
+	public void testAcquireReusable(){
 		this.tearDown();
+		try {
 		reusablePool.acquireReusable();
+		Assert.Fail("An exception should have been thrown");
+		} catch(NotFreeInstanceException  e) {
+			
+		}
 		
 		
 	}
