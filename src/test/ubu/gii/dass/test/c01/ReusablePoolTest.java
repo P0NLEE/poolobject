@@ -16,8 +16,8 @@ import ubu.gii.dass.c01.*;
  *
  */
 public class ReusablePoolTest {
-	
-	/*Objeto de la clase que se va a tester*/
+
+	/* Objeto de la clase que se va a tester */
 	ReusablePool reusablePool = null;
 
 	/**
@@ -41,21 +41,28 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testGetInstance() {
-		if(reusablePool == null) {
-			assert ReusablePool.getInstance() != null :"Debe devolverse objetos en caso de que el Pool sea nulo";
+		if (reusablePool == null) {
+			assert ReusablePool.getInstance() != null : "Debe devolverse objetos en caso de que el Pool sea nulo";
+		} else {
+			assert ReusablePool.getInstance() != null : "Devuelve objetos en caso de que el Pool no este vacios";
 		}
+
 	}
 
 	/**
 	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#acquireReusable()}.
 	 */
-	@Test
+	@Test(expected = NotFreeInstanceException.class)
 	public void testAcquireReusable() {
-		fail("Not yet implemented");
+		reusablePool = null;
+		reusablePool.acquireReusable();
+		
+		
 	}
 
 	/**
-	 * Test method for {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
+	 * Test method for
+	 * {@link ubu.gii.dass.c01.ReusablePool#releaseReusable(ubu.gii.dass.c01.Reusable)}.
 	 */
 	@Test
 	public void testReleaseReusable() {
