@@ -77,8 +77,9 @@ public class ReusablePoolTest {
 			Reusable r = reusablePool_release.acquireReusable();
 			reusablePool_release.releaseReusable(r);
 			assertTrue("No debería saltar excepcion",true);
+			reusablePool_release.releaseReusable(r);
 		}catch(Exception e) {
-			
+			assertTrue("Al intentar meter el mismo objeto reusable deberia saltar la excepcion", e instanceof DuplicatedInstanceException)
 		}finally {
 			
 		}
