@@ -70,8 +70,8 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testReleaseReusable() {
-		reusablePool = ReusablePool.getInstance();
-		Reusable r = reusablePool.acquireReusable();
+		ReusablePool reusablePool_release = ReusablePool.getInstance();
+		Reusable r = reusablePool_release.acquireReusable();
 		try {
 			//Comprobamos que no se lanza excepcion
 			reusablePool.releaseReusable(r);
