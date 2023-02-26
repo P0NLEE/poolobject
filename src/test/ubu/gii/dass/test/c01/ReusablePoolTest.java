@@ -75,6 +75,11 @@ public class ReusablePoolTest {
 		try {
 			//Comprobamos que no se lanza excepcion
 			reusablePool.releaseReusable(r);
+			
+		}catch(NotFreeInstanceException e) {
+			fail("No debería haber devuelto la excepcion");
+		}
+		finally {
 			assertTrue(true); 
 		}
 	}
