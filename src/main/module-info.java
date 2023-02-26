@@ -6,6 +6,5 @@
  *
  */
 module poolobject {
-	requires junit;
 	requires java.logging;
 }
