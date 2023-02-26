@@ -44,7 +44,7 @@ public class ReusablePoolTest {
 		if (reusablePool == null) {
 			assert ReusablePool.getInstance() != null : "Debe devolverse objetos en caso de que el Pool sea nulo";
 		} else {
-			assert ReusablePool.getInstance() != null : "Devuelve objetos en caso de que el Pool no este vacios";
+			assertTrue(ReusablePool.getInstance() instanceof ReusablePool);
 		}
 
 	}
