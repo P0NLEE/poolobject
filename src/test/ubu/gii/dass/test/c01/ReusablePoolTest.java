@@ -9,17 +9,23 @@ import org.junit.After;
 import org.junit.Before;
 import org.junit.Test;
 
+import ubu.gii.dass.c01.*;
+
 /**
- * @author alumno
+ * @author Bilal Azar El Mourabit
  *
  */
 public class ReusablePoolTest {
+	
+	/*Objeto de la clase que se va a tester*/
+	ReusablePool reusablePool = null;
 
 	/**
 	 * @throws java.lang.Exception
 	 */
 	@Before
 	public void setUp() throws Exception {
+		reusablePool = ReusablePool.getInstance();
 	}
 
 	/**
@@ -27,6 +33,7 @@ public class ReusablePoolTest {
 	 */
 	@After
 	public void tearDown() throws Exception {
+		reusablePool = null;
 	}
 
 	/**
@@ -34,7 +41,9 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testGetInstance() {
-		fail("Not yet implemented");
+		if(reusablePool == null) {
+			assert reusablePool.getInstance() != null :"Debe devolverse objetos en caso de que el Pool sea nulo";
+		}
 	}
 
 	/**
