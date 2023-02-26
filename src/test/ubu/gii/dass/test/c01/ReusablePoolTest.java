@@ -54,7 +54,7 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testAcquireReusable() {
-		this.tearDown();
+		reusablePool = null;
 		try {
 			reusablePool.acquireReusable();
 			fail("An exception should have been thrown");
