@@ -70,7 +70,13 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testReleaseReusable() {
-		fail("Not yet implemented");
+		reusablePool = ReusablePool.getInstance();
+		Reusable r = reusablePool.acquireReusable();
+		try {
+			//Comprobamos que no se lanza excepcion
+			reusablePool.releaseReusable(r);
+			assertTrue(true); 
+		}
 	}
 
 }
