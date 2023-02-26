@@ -54,10 +54,9 @@ public class ReusablePoolTest {
 	 */
 	@Test
 	public void testAcquireReusable() {
-		reusablePool = null;
+		ReusablePool reusablePool_acquire = ReusablePool.getInstance();
 		try {
-			reusablePool.acquireReusable();
-			fail("An exception should have been thrown");
+			assertTrue(reusablePool.acquireReusable() instanceof Reusable);
 		} catch (NotFreeInstanceException e) {
 			assertTrue(true);
 		}
